@@ -62,5 +62,7 @@ export SCM_CHECK=true
 # Uncomment this to make Bash-it create alias reload.
 # export BASH_IT_RELOAD_LEGACY=1
 
+export SCM_GIT_SHOW_MINIMAL_INFO=true
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
