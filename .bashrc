@@ -106,6 +106,10 @@ bind -m vi-insert '"\ec": "\C-z\ec\C-z"'
 
 fi
 
+# prompt
+
+PS1=$'\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n\u25b6 '
+
 ### fzf configuration
 
 # Setting fd as the default source for fzf
@@ -124,4 +128,13 @@ _fzf_compgen_dir() {
 fd --type d . "$1"
 }
 
+nr() {
+  local task
+  task=$(node --eval="Object.entries(require('./package.json').scripts).map(([k,v])=>console.log(k,'  -  ',v))" | 
+  fzf --delimiter='  -  ' --nth=1 | 
+  sed 's/ \- .*$//') && npm run $task
+}
+
+# dotfiles management
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
