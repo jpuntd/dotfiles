@@ -138,3 +138,6 @@ nr() {
 # dotfiles management
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+# add scoop user installs to path
+export PATH=$PATH:"/c/Users/jand/scoop/shims"
+
