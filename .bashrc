@@ -114,9 +114,9 @@ PS1=$'\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\
 
 # Setting fd as the default source for fzf
 export FZF_DEFAULT_COMMAND='fd --type f'
-# fzf ctrl-r and alt-c behavior
-export FZF_CTRL_T_COMMAND="fd --hidden --follow --exclude \".git\" . $HOME"
-export FZF_ALT_C_COMMAND="fd -t d --hidden --follow --exclude \".git\" . $HOME"
+# fzf ctrl-t and alt-c behavior
+# export FZF_CTRL_T_COMMAND="fd --exclude \".git\" . $HOME"
+export FZF_ALT_C_COMMAND="fd -t d --exclude \".git\" --exclude \"node_modules\" . $HOME"
 
 # fzf single quote tab completion behavior
 # export FZF_COMPLETION_TRIGGER="'"
