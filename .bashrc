@@ -13,8 +13,6 @@ export FZF_CTRL_T_COMMAND="fd --type f --hidden --follow . $HOME"
 export FZF_ALT_C_COMMAND="fd --type d --follow . $HOME"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# source $HOME/scoop/apps/anaconda/current/etc/profile.d/conda.sh
-source $HOME/scoop/app/git/usr/share/bash-completion 
 [ -f /etc/bash_completion.d/git ] && source /etc/bash_completion.d/git
 
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -22,4 +20,3 @@ alias cursor='tput cnorm'
 alias ll='ls -alh'
 alias kenny='kenny -v'
 alias lg='lazygit'
-
